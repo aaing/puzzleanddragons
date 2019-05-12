@@ -42,11 +42,11 @@ class DragItem extends Component {
     const { isDragging, isOver } = this.props;
 
     return {
-      width: '100px' ,
-      height: '100px' ,
+      width: '15vw' ,
+      height: '15vw' ,
       'backgroundColor': isOver ? 'blue' : this.props.color,
       float: 'left',
-      borderRadius: '100px',
+      borderRadius: '15vw',
       opacity: isDragging ? 0.4 : 1,
     }
   }

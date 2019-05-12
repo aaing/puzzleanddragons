@@ -21,6 +21,10 @@ class SortableList extends Component {
   onDrop = () => {
     items = this.state.items.slice();
     this.combo = calcCombo(items);
+    // 0コンボなら処理をスキップ
+    if(this.combo.length === 0) {
+      return;
+    }
 
     // デバッグ用ログ
     console.log('盤面');
@@ -40,6 +44,7 @@ class SortableList extends Component {
     if (this.combo.length === 0) {
       clearInterval(this.interval);
       this.fall();
+      this.onDrop();
     } else {
       // 消す処理
       this.combo[0].forEach(id => {
@@ -164,8 +169,11 @@ function setItem(x, y) {
  */
 function setStyle(x, y) {
   return {
-    width: `${x * 100}px`,
-    height: `${y * 100}px`
+    // width: `${x * 100}px`,
+    // height: `${y * 100}px`
+    width: '90vw',
+    height: '75vw'
+
   }
 }
 
