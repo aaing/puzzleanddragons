@@ -7,8 +7,8 @@ function getStyle() {
     pointerEvents: 'none',
     top: 0,
     left: 0,
-    width: '100%',
-    height: '100%',
+    width: '15vw',
+    height: '15vw',
   }
 }
 
@@ -27,21 +27,22 @@ class CustomDragLayer extends React.Component {
     if (!currentOffset) {
       return {
         display: 'block',
-        width: '100px',
-        height: '100px',
+        width: '15vw',
+        height: '15vw',
       }
     }
 
     // move position
     const x = currentOffset.x
     const y = currentOffset.y
-    const transform = `translate(${x}px, ${y}px) scale(1.05)`
+    const transform = `translate(${x}px, ${y}px) scale(1)`
 
     return {
       WebkitTransform: transform,
       transform: transform,
-      width: '100px',
-      height: '100px',
+      width: '15vw',
+      height: '15vw',
+      borderRadius: '15vw',
       backgroundColor: color
     }
   }
